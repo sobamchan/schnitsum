@@ -6,8 +6,10 @@ Currently, we support following models,
 
 - [BART (large)](https://aclanthology.org/2020.acl-main.703) fine-tuned on computer science papers (ref. [SciTLDR](https://aclanthology.org/2020.findings-emnlp.428)).
   - Model name: `sobamchan/bart-large-scitldr`
+- [BART (large)](https://aclanthology.org/2020.acl-main.703) fine-tuned on computer science papers (ref. [SciTLDR](https://aclanthology.org/2020.findings-emnlp.428)). Then distilled to have 65% parameters less.
+  - Model name: `sobamchan/bart-large-scitldr-distilled-3-3`
 
-we are planning to expand coverage soon to other domains, languages, models soon.
+we are planning to expand coverage soon to other sizes, domains, languages, models soon.
 
 
 # Installation
