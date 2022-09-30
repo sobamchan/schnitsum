@@ -25,7 +25,7 @@ This will let you generate summaries with CPUs only, if you want to utilize your
 
 ```py3
 from schnitsum import SchnitSum
-model = SchnitSum("sobamchan/bart-large-scitldr")
+model = SchnitSum("sobamchan/bart-large-scitldr-distilled-3-3")
 
 docs = [
     "Document you want to summarize."
