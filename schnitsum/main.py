@@ -5,6 +5,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 MODEL_NAMES = [
     "sobamchan/bart-large-scitldr",
     "sobamchan/bart-large-scitldr-distilled-3-3",
+    "sobamchan/bart-large-scitldr-distilled-12-3",
 ]
 
 
