@@ -4,7 +4,7 @@ This package enables to generate summaries of you documents of interests.
 
 Currently, we support following models,
 
-- [BART (large), "sobamchan/bart-large-scitldr"](https://aclanthology.org/2020.acl-main.703) fine-tuned on computer science papers (ref. [SciTLDR](https://aclanthology.org/2020.findings-emnlp.428)).
+- [BART (large)](https://aclanthology.org/2020.acl-main.703) fine-tuned on computer science papers (ref. [SciTLDR](https://aclanthology.org/2020.findings-emnlp.428)).
 
 we are planning to expand coverage soon to other domains, languages, models soon.
 
