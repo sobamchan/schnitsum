@@ -33,7 +33,7 @@ Pass document as an argument and print the summary
 
 Pass documents as a file and save summaries in a file.
 Input file needs to contain documents line by line. [example](https://github.com/sobamchan/schnitsum/blob/main/examples/docs.txt)
-```
+```sh
 > schnitsum --model-name sobamchan/bart-large-scitldr-distilled-3-3 --file docs.txt --opath sums.txt
 ```
 
