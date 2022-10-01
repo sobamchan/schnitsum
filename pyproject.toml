@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "schnitsum"
-version = "0.3.0"
+version = "0.4.0"
 description = ""
 authors = ["sobamchan <oh.sore.sore.soutarou@gmail.com>"]
 readme = "README.md"
@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.9"
 transformers = "^4.22.2"
 torch = "^1.12.1"
+fire = "^0.4.0"
+sienna = "^0.1.5"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -21,3 +23,6 @@ neovim = "^0.3.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+schnitsum = "schnitsum.bin.summarize:cli"

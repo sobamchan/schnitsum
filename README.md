@@ -25,6 +25,17 @@ This will let you generate summaries with CPUs only, if you want to utilize your
 
 # Usage
 
+## From Command Line
+```sh
+% Pass document as an argument and print the summary
+> schnitsum --model-name sobamchan/bart-large-scitldr-distilled-3-3 --text "Text to summarize"
+
+% Pass documents as a file and save summaries in a file.
+% Input file needs to contain documents line by line. [example](https://github.com/sobamchan/schnitsum/blob/main/examples/docs.txt)
+> schnitsum --model-name sobamchan/bart-large-scitldr-distilled-3-3 --file docs.txt --opath sums.txt
+```
+
+## From Python
 ```py3
 from schnitsum import SchnitSum
 model = SchnitSum("sobamchan/bart-large-scitldr-distilled-3-3")
