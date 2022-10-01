@@ -1,4 +1,5 @@
 from typing import List
+from tqdm import tqdm
 
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
@@ -44,9 +45,14 @@ class SchnitSum:
             inputs["input_ids"].to("cuda") if self.use_gpu else inputs["input_ids"],
             max_length=250,
             num_beams=1,
+            repetition_penalty=1.0,
             early_stopping=True,
         )
         return self.tokenizer.batch_decode(summary_ids, skip_special_tokens=True)
 
-    def __call__(self, texts: List[str]) -> List[str]:
-        return self.summarize_batch(texts)
+    def __call__(self, texts: List[str], batch_size: int = 4) -> List[str]:
+        summaries = []
+        for i in tqdm(range(0, len(texts), batch_size)):
+            texts_batch = texts[i : i + batch_size]
+            summaries += self.summarize_batch(texts_batch)
+        return summaries

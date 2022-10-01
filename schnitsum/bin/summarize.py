@@ -9,6 +9,7 @@ def summarize(
     file: str = None,
     text: str = None,
     opath: str = None,
+    batch_size: int = 4,
     use_gpu: bool = False,
 ):
     ssum = SchnitSum(model_name, use_gpu)
@@ -23,7 +24,7 @@ def summarize(
     else:
         raise ValueError("file or text needs to be provided.")
 
-    summaries = ssum(docs)
+    summaries = ssum(docs, batch_size)
 
     if opath:
         sienna.save(summaries, opath)
