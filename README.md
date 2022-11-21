@@ -40,12 +40,11 @@ Input file needs to contain documents line by line. [example](https://github.com
 ## From Python
 ```py3
 from schnitsum import SchnitSum
-model = SchnitSum("sobamchan/bart-large-scitldr-distilled-3-3")
 
+model = SchnitSum("sobamchan/bart-large-scitldr-distilled-3-3")
 docs = [
     "Document you want to summarize."
 ]
-
 summaries = model(docs)
 print(summaries)
 ```
