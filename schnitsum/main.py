@@ -1,6 +1,6 @@
 from typing import List
-from tqdm import tqdm
 
+from tqdm import tqdm
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 MODEL_NAMES = [
@@ -11,12 +11,20 @@ MODEL_NAMES = [
 
 
 class SchnitSum:
-    def __init__(self, model_name: str = None, use_gpu=False):
-        """Easy to use summarization package.
-        model_name (str): Model name to use.
-        use_gpu (bool): Whether use GPU for inference or not.
-        """
+    def __init__(self, model_name: str = None, use_gpu: bool = False):
 
+        """Easy to use summarization package.
+        model_name (str):
+        use_gpu (bool): Whether use GPU for inference or not.
+
+        Parameters
+        ----------
+        model_name : str
+            Model name to use.
+
+        use_gpu : bool
+            If use GPU or not
+        """
         if model_name not in MODEL_NAMES:
             model_names_str = "\n".join([f"- {name}" for name in MODEL_NAMES])
             raise ValueError(
