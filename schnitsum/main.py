@@ -7,11 +7,21 @@ MODEL_NAMES = [
     "sobamchan/bart-large-scitldr",
     "sobamchan/bart-large-scitldr-distilled-3-3",
     "sobamchan/bart-large-scitldr-distilled-12-3",
+    "sobamchan/mbart-large-xscitldr-de",
 ]
+LANG2CODE = {
+    "en": "en_XX",
+    "de": "de_DE",
+    "ja": "ja_XX",
+    "it": "it_IT",
+    "zh": "zh_CN",
+}
 
 
 class SchnitSum:
-    def __init__(self, model_name: str = None, use_gpu: bool = False):
+    def __init__(
+        self, model_name: str = None, tgt_lang: str = "en", use_gpu: bool = False
+    ):
 
         """Easy to use summarization package.
         model_name (str):
@@ -24,6 +34,9 @@ class SchnitSum:
 
         use_gpu : bool
             If use GPU or not
+
+        tgt_lang : str
+            Language for output summary (default = `en`)
         """
         if model_name not in MODEL_NAMES:
             model_names_str = "\n".join([f"- {name}" for name in MODEL_NAMES])
@@ -43,6 +56,7 @@ class SchnitSum:
         self.use_gpu = use_gpu
         self.model = model
         self.model_name = model_name
+        self.tgt_lang = tgt_lang
         print("loaded!")
 
     def summarize_batch(self, texts: List[str]) -> List[str]:
@@ -55,6 +69,11 @@ class SchnitSum:
             num_beams=1,
             repetition_penalty=1.0,
             early_stopping=True,
+            decoder_start_token_id=self.tokenizer.lang_code_to_id[
+                LANG2CODE[self.tgt_lang]
+            ]
+            if self.tgt_lang != "en"
+            else None,
         )
         return self.tokenizer.batch_decode(summary_ids, skip_special_tokens=True)
 
