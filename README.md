@@ -12,6 +12,8 @@ Currently, we support following models,
   - Model name: `sobamchan/bart-large-scitldr-distilled-12-3`
 - [mBART (large, en-to-de)](https://aclanthology.org/2020.acl-main.703) fine-tuned on computer science papers, English papers and German summaries (ref. [X-SciTLDR](https://dl.acm.org/doi/abs/10.1145/3529372.3530938)).
   - Model name: `sobamchan/mbart-large-xscitldr-de`
+- [BART (large)](https://aclanthology.org/2020.acl-main.703) fine-tuned on XSum, BCC news article lead sentences in English. (ref. [X-SciTLDR](https://dl.acm.org/doi/abs/10.1145/3529372.3530938)).
+  - Model name: `facebook/bart-large-xsum`
 
 we are planning to expand coverage soon to other sizes, domains, languages, models soon.
 

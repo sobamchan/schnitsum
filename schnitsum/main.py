@@ -9,6 +9,7 @@ MODEL_NAMES = [
     "sobamchan/bart-large-scitldr-distilled-3-3",
     "sobamchan/bart-large-scitldr-distilled-12-3",
     "sobamchan/mbart-large-xscitldr-de",
+    "facebook/bart-large-xsum",
 ]
 LANG2CODE = {
     "en": "en_XX",
