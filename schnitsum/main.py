@@ -1,3 +1,4 @@
+from math import ceil
 from typing import List
 
 from tqdm import tqdm
@@ -79,7 +80,9 @@ class SchnitSum:
 
     def __call__(self, texts: List[str], batch_size: int = 4) -> List[str]:
         summaries = []
-        for i in tqdm(range(0, len(texts), batch_size)):
+        for i in tqdm(
+            range(0, len(texts), batch_size), total=ceil(len(texts) / batch_size)
+        ):
             texts_batch = texts[i : i + batch_size]
             summaries += self.summarize_batch(texts_batch)
         return summaries
